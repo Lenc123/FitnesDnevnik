@@ -13,7 +13,6 @@ public class DataAll {
        utezi = new ArrayList<Utezi>();
        kardio=new ArrayList<Kardio>();
     }
-
     private ArrayList<Utezi> utezi;
     private ArrayList<Kardio> kardio;
 
@@ -27,6 +26,23 @@ public class DataAll {
 
     public ArrayList<Kardio> getKardio() {
         return kardio;
+    }
+
+    public Kardio getKardioFilter(String naziv){
+        for(int i=0;i<kardio.size();i++){
+            if(naziv.equals(kardio.get(i).getNazivKardio())){
+                return kardio.get(i);
+            }
+        }
+    return null;
+    }
+    public Utezi getUteziFilter(String naziv){
+        for(int i=0;i<utezi.size();i++){
+            if(naziv.equals(utezi.get(i).getNazivUtezi())){
+                return utezi.get(i);
+            }
+        }
+        return null;
     }
 
     public void setKardio(ArrayList<Kardio> kardio) {

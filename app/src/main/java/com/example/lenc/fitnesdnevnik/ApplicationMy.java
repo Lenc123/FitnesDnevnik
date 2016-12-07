@@ -33,7 +33,9 @@ public class ApplicationMy extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        all=DataAll.getPodatke();
+        if(load()==false){
+            all=DataAll.getPodatke();
+        }
     }
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();

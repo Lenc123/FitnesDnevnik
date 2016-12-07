@@ -5,15 +5,9 @@ package com.example.lenc.fitnesdnevnik;
  */
 public class Utezi {
     private String nazivUtezi;
-    private String cas;
+    private String ponovitve;
+    private String serije;
 
-    public String getCas() {
-        return cas;
-    }
-
-    public void setCas(String cas) {
-        this.cas = cas;
-    }
 
     public Utezi(String nazivUtezi) {
         this.nazivUtezi = nazivUtezi;
@@ -23,6 +17,28 @@ public class Utezi {
         return nazivUtezi;
     }
 
+    public Utezi(String nazivUtezi, String cas) {
+        this.nazivUtezi = nazivUtezi;
+        this.ponovitve = ponovitve;
+        this.serije = serije;
+    }
+
+    public String getPonovitve() {
+        return ponovitve;
+    }
+
+    public String getSerije() {
+        return serije;
+    }
+
+    public void setSerije(String serije) {
+        this.serije = serije;
+    }
+
+    public void setPonovitve(String ponovitve) {
+        this.ponovitve = ponovitve;
+    }
+
     public void setNazivUtezi(String nazivUtezi) {
         this.nazivUtezi = nazivUtezi;
     }
@@ -30,7 +46,7 @@ public class Utezi {
     @Override
     public String toString() {
         return "Utezi{" +
-                "nazivUtezi='" + nazivUtezi + '\'' + "cas"+cas+
+                "nazivUtezi='" + nazivUtezi + '\'' + "ponovitve"+ponovitve+ "serije" +serije+
                 '}';
     }
 }

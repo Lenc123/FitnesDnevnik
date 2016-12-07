@@ -1,8 +1,12 @@
 package com.example.lenc.fitnesdnevnik;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +22,7 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
 
     private  DataAll mDataset;
     Activity ac;
+
     //private android.support.v4.app.Fragment mFragment;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -44,7 +49,7 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
         return vh;
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.txtVaja.setText(mDataset.getKardio().get(position).getNazivKardio());
         final String whateverIDO=holder.txtVaja.getText().toString();
         holder.layout.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +63,12 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
         holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+
                 mDataset.zbrisiKardio(position);
                 notifyDataSetChanged();
+                TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);
+                Toast toast = Toast.makeText(ac.getApplication(),"Izbrisali ste vajo "+txtVaja.getText().toString(),Toast.LENGTH_SHORT);
+                toast.show();
                 return true;
             }
         });

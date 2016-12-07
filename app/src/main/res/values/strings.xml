@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FitnesDnevnik</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_vaje">Vaje</string>
+    <string name="title_activity_cardio">Cardio</string>
+    <string name="title_activity_activity_kardio">ActivityKardio</string>
+    <string name="title_activity_activity_utezi">ActivityUtezi</string>
+    <string name="title_activity_activity_shrani">ActivityShrani</string>
+    <color name="blue">#010101</color>
+    <string name="title_activity_maps">Map</string>
+</resources>

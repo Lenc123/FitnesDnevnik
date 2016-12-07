@@ -10,6 +10,7 @@ import android.widget.EditText;
 public class ActivityDodajVajoKardio extends AppCompatActivity {
 
     private Button btnDodaj;
+    private Button btnDodajSkeniraj;
     ApplicationMy app;
     private EditText txtVaja;
     @Override
@@ -18,11 +19,16 @@ public class ActivityDodajVajoKardio extends AppCompatActivity {
         setContentView(R.layout.activity_dodaj_vajo_kardio);
 
         btnDodaj=(Button)findViewById(R.id.buttonDodajVadboKardio);
+        btnDodajSkeniraj=(Button)findViewById(R.id.buttonSkenirajKardio);
         txtVaja = (EditText) findViewById(R.id.editTextVajaKardio);
         app= (ApplicationMy) getApplication();
     }
     public void btnDodajOnClick(View v){
         app.getAll().dodaj(new Kardio(txtVaja.getText().toString()));
         finish();
+    }
+    public void btnDodajSkenirajOnClick(View v){
+        Intent skenirajKardio = new Intent(this,ActivitySkenirajKardio.class);
+        startActivity(skenirajKardio);
     }
 }

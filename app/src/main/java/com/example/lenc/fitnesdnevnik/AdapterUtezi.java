@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Lenc on 30. 05. 2016.
@@ -55,6 +56,9 @@ public class AdapterUtezi extends RecyclerView.Adapter<AdapterUtezi.ViewHolder> 
             public boolean onLongClick(View v) {
                 mDataset.zbrisiUtezi(position);
                 notifyDataSetChanged();
+                TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);
+                Toast toast = Toast.makeText(ac.getApplication(),"Izbrisali ste vajo "+txtVaja.getText().toString(),Toast.LENGTH_SHORT);
+                toast.show();
                 return true;
             }
         });

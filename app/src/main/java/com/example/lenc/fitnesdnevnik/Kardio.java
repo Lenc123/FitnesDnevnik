@@ -7,6 +7,11 @@ public class Kardio {
     private String nazivKardio;
     private String cas;
 
+    public Kardio(String nazivKardio, String cas) {
+        this.nazivKardio = nazivKardio;
+        this.cas = cas;
+    }
+
     public String getCas() {
         return cas;
     }

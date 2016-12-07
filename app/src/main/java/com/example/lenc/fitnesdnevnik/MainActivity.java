@@ -2,32 +2,21 @@ package com.example.lenc.fitnesdnevnik;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import java.util.Calendar;
+
+//import com.google.android.gms.auth.api.Auth;
+//import com.google.android.gms.common.SignInButton;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonKardio;
     private Button buttonUtezi;
-
+    private Button buttonUser;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +25,17 @@ public class MainActivity extends AppCompatActivity {
 
         buttonKardio=(Button)findViewById(R.id.buttonKardio);
         buttonUtezi=(Button)findViewById(R.id.buttonUtezi);
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
+        buttonUser = (Button)findViewById(R.id.buttonUser);
+        buttonUser.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intentUSer = new Intent(MainActivity.this, UserActivity.class);
+                startActivity(intentUSer);
+            }
+        });
     }
+
+
     public void buttonKardioOnClick(View v){
         Intent intentKardio = new Intent(this,ActivityKardio.class);
         startActivity(intentKardio);
@@ -49,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     public void buttonUtezionClick(View v){
         Intent intentUtezi = new Intent(this,ActivityUtezi.class);
         startActivity(intentUtezi);
+    }
+    public void buttonUserOnClick(View v){
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
