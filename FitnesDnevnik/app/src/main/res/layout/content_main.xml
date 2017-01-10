@@ -12,15 +12,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.lenc.fitnesdnevnik.MainActivity"
     tools:showIn="@layout/activity_main">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <Button
             android:layout_width="88dp"
@@ -60,6 +59,7 @@
             android:layout_gravity="center" />
 
     </LinearLayout>
+
 
 
 </RelativeLayout>

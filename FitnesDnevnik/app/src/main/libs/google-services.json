@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "618506025797",
+    "project_id": "fitnesdnevnik-8f051"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618506025797:android:9c547b5ed466b580",
+        "android_client_info": {
+          "package_name": "com.android.vending"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618506025797-7ci40t06qpnvadk731o0kn8rgqs4r26u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.vending",
+            "certificate_hash": "1BCBDD957B8C62115DED9A4135339D542D26EDFF"
+          }
+        },
+        {
+          "client_id": "618506025797-tjp4m4th8q13k6ohluvnqej5ne4lcqkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNxzPu1p6ckeDlM8JKhSmtXtbscJZqHVA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
