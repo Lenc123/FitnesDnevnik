@@ -40,7 +40,7 @@
         android:layout_alignRight="@+id/textView5"
         android:layout_alignEnd="@+id/textView5"
         android:onClick="btnDodajOnClick"
-        android:background="@drawable/botton_selector" />
+        android:background="@color/wallet_holo_blue_light" />
 
     <Button
         android:layout_width="wrap_content"
@@ -51,6 +51,6 @@
         android:onClick="btnDodajSkenirajOnClick"
         android:layout_below="@+id/buttonDodajVadboUtezi"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/botton_selector" />
+        android:background="@color/wallet_holo_blue_light" />
 
 </RelativeLayout>

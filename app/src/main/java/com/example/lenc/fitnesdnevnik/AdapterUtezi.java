@@ -1,11 +1,13 @@
 package com.example.lenc.fitnesdnevnik;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,11 +56,38 @@ public class AdapterUtezi extends RecyclerView.Adapter<AdapterUtezi.ViewHolder> 
         holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                mDataset.zbrisiUtezi(position);
-                notifyDataSetChanged();
-                TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);
-                Toast toast = Toast.makeText(ac.getApplication(),"Izbrisali ste vajo "+txtVaja.getText().toString(),Toast.LENGTH_SHORT);
-                toast.show();
+
+                final Dialog dialog = new Dialog(ac);
+                dialog.setContentView(R.layout.dialog);
+
+
+                // set values for custom dialog components - text, image and button
+                final TextView text = (TextView) dialog.findViewById(R.id.textDialog);
+                text.setText("Ali želite izbrisati vajo?");
+
+                dialog.show();
+
+                Button declineButton = (Button) dialog.findViewById(R.id.declineButton);
+                Button acceptButton =(Button)dialog.findViewById(R.id.acceptButton);
+                // if decline button is clicked, close the custom dialog
+                declineButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        dialog.dismiss();
+                    }
+                });
+                acceptButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDataset.zbrisiUtezi(position);
+                        notifyDataSetChanged();
+                     /*   TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);*/
+                        Toast toast = Toast.makeText(ac.getApplication(),"Uspešno ste izbrisali vajo "/*+txtVaja.getText().toString()*/,Toast.LENGTH_SHORT);
+                        toast.show();
+                        dialog.dismiss();
+                    }
+                });
                 return true;
             }
         });

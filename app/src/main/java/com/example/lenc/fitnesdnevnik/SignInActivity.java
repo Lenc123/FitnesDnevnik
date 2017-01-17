@@ -50,6 +50,9 @@ public class SignInActivity extends AppCompatActivity implements
               /*   app.getAll().getUserFilter(id).setTeza(Integer.parseInt(teza.getText().toString()));
                 app.getAll().getUserFilter(id).setVelikost(Integer.parseInt(velikost.getText().toString()));
                 app.getAll().getUserFilter(id).setObseg(Integer.parseInt(obseg.getText().toString()));*/
+                teza.setText("");
+                velikost.setText("");
+                obseg.setText("");
                 Toast toast = Toast.makeText(getApplicationContext(), "Podatki uspešno shranjeni v datoteko", Toast.LENGTH_SHORT);
                 toast.show();
             }

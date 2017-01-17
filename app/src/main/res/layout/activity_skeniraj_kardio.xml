@@ -35,18 +35,19 @@
         android:layout_height="wrap_content"
         android:text="Skeniraj"
         android:id="@+id/buttonSkenirajUtezi"
-        android:layout_below="@+id/textViewNaziv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="164dp"
-        android:background="@drawable/botton_selector" />
+        android:background="@color/wallet_holo_blue_light"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dodaj"
         android:id="@+id/buttonDodajPoSkeniranju"
-        android:layout_below="@+id/buttonSkenirajUtezi"
-        android:layout_centerHorizontal="true"
         android:onClick="btnDodajSkanOnClick"
-        android:background="@drawable/botton_selector" />
+        android:background="@color/wallet_holo_blue_light"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/buttonSkenirajUtezi"
+        android:layout_alignLeft="@+id/buttonSkenirajUtezi"
+        android:layout_alignStart="@+id/buttonSkenirajUtezi" />
 </RelativeLayout>

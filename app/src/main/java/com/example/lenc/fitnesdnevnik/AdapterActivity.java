@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,13 +64,37 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
         holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                final Dialog dialog = new Dialog(ac);
+                dialog.setContentView(R.layout.dialog);
+                final TextView text = (TextView) dialog.findViewById(R.id.textDialog);
+                text.setText("Ali želite izbrisati vajo?");
 
-                mDataset.zbrisiKardio(position);
-                notifyDataSetChanged();
-                TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);
-                Toast toast = Toast.makeText(ac.getApplication(),"Izbrisali ste vajo "+txtVaja.getText().toString(),Toast.LENGTH_SHORT);
-                toast.show();
+                dialog.show();
+
+                Button declineButton = (Button) dialog.findViewById(R.id.declineButton);
+                Button acceptButton =(Button)dialog.findViewById(R.id.acceptButton);
+                // if decline button is clicked, close the custom dialog
+                declineButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        dialog.dismiss();
+                    }
+                });
+                acceptButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDataset.zbrisiKardio(position);
+                        notifyDataSetChanged();
+                       // TextView txtVaja = (TextView)v.findViewById(R.id.textViewVaja);
+                        Toast toast = Toast.makeText(ac.getApplication(),"Uspešno ste izbrisali vajo "/*+txtVaja.getText().toString()*/,Toast.LENGTH_SHORT);
+                        toast.show();
+                        dialog.dismiss();
+
+                    }
+                });
                 return true;
+
             }
         });
     }

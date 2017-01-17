@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class ActivityKardio extends AppCompatActivity {
+import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
+
+public class ActivityKardio extends AppCompatActivity  {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -32,13 +34,15 @@ public class ActivityKardio extends AppCompatActivity {
                 startActivity(new Intent(ActivityKardio.this,ActivityDodajVajoKardio.class));
             }
         });
-
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new AdapterActivity(app.getAll(),this);
+
+
+
         mRecyclerView.setAdapter(mAdapter);
 
 

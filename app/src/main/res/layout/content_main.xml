@@ -30,34 +30,26 @@
             android:onClick="buttonUserOnClick (MainActivity)" />
 
         <Button
-            android:layout_width="295dp"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="130dp"
             android:layout_centerHorizontal="true"
             android:text="Kardio vaje"
             android:id="@+id/buttonKardio"
             android:layout_marginTop="45dp"
             android:onClick="buttonKardioOnClick"
-            android:background="@drawable/botton_selector"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/holo_blue_light" />
 
         <Button
-            android:layout_width="295dp"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="130dp"
             android:layout_centerHorizontal="true"
             android:text="Vaje z utežmi"
             android:id="@+id/buttonUtezi"
             android:onClick="buttonUtezionClick"
             android:layout_marginTop="45dp"
-            android:background="@drawable/botton_selector"
-            android:layout_gravity="center_horizontal" />
-
-        <ImageView
-            android:layout_width="379dp"
-            android:layout_height="220dp"
-            android:id="@+id/imageView"
-            android:src="@drawable/arni"
-            android:layout_weight="0.67"
-            android:layout_gravity="center" />
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/holo_blue_light" />
 
     </LinearLayout>
 

@@ -57,27 +57,6 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="51dp" />
 
-    <Button
-        android:text="Shrani podatke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonShraniPodatke"
-        android:layout_alignTop="@+id/sign_in_button"
-        android:layout_toLeftOf="@+id/editText7"
-        android:layout_toStartOf="@+id/editText7" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText6"
-        android:hint="Dodaj težo v kg"
-        android:layout_above="@+id/editText5"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="24dp" />
-
     <TextView
         android:text="Teža: "
         android:layout_width="wrap_content"
@@ -101,5 +80,27 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText6"
+        android:hint="Dodaj težo v kg"
+        android:layout_marginBottom="28dp"
+        android:layout_above="@+id/editText5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Shrani podatke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonShraniPodatke"
+        android:layout_alignTop="@+id/sign_in_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/wallet_holo_blue_light" />
 
 </RelativeLayout>
